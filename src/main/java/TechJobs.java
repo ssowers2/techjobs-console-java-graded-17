@@ -11,6 +11,8 @@ public class TechJobs {
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
+    //SS: Presents a menu to user to search and select from.
+        // SS: This part initializes column and action choices.
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -25,6 +27,7 @@ public class TechJobs {
         actionChoices.put("search", "Search");
         actionChoices.put("list", "List");
 
+        //Prints first line of code as a message
         System.out.println("Welcome to LaunchCode's TechJobs App!");
 
         // Allow the user to search until they manually quit
@@ -121,16 +124,14 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         if (someJobs.size() == 0) {
               System.out.print("No Results");
+
         } else {
-            for (int i = 0; i < someJobs.size(); i++) {
-                HashMap<String, String> job = someJobs.get(i);
+            for (HashMap<String, String> job: someJobs) {
                 System.out.println();
                 System.out.println("*****");
-                System.out.println("position type: " + job.get("position type"));
-                System.out.println("name: " + job.get("name"));
-                System.out.println("employer: " + job.get("employer"));
-                System.out.println("location: " + job.get("location"));
-                System.out.println("core competency: " + job.get("core competency"));
+                  for(Map.Entry<String, String> result : job.entrySet()) {
+                      System.out.println(result.getKey() + ": " + result.getValue());
+                  }
                 System.out.println("*****");
             }
         }

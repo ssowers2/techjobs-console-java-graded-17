@@ -28,6 +28,7 @@ public class JobData {
      */
     public static ArrayList<String> findAll(String field) {
 
+
         // load data, if not already loaded
         loadData();
 
@@ -64,7 +65,7 @@ public class JobData {
      * @return List of all jobs matching the criteria
      */
     public static ArrayList<HashMap<String, String>> findByColumnAndValue(String column, String value) {
-
+        //SS: Searches for jobs that match a specific value in a given column. Made case-insensitive.
         // load data, if not already loaded
         loadData();
 
